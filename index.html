@@ -319,6 +319,10 @@
       display: flex;
       flex-direction: column;
     }
+    .book-card a{
+      color: inherit;
+      text-decoration: none;
+    }
     .book-card:hover {
       box-shadow: var(--shadow-hover), 0 0 20px rgba(10,188,233,.12);
       transform: translateY(-3px);
@@ -392,8 +396,8 @@
       background: rgba(10,188,233,.08);
     }
     .btn-download {
-      background: var(--accent);
-      color: var(--bg);
+      background: var(--primary);
+      color: var(--secondary);
       flex: 1;
       justify-content: center;
       font-weight: 600;
@@ -948,7 +952,7 @@ function cardGrid(bk) {
         </a>
         <a class="btn-download" href="${escapeHtml(bk.dl)}" download>
           <i class="bx bx-cloud-download"></i>
-          ${bk.size ? `<span class="size">${escapeHtml(bk.size)} MB</span>` : ''}
+          ${bk.size ? `<span class="size">${escapeHtml(bk.size)} Mb</span>` : ''}
         </a>
       </div>
     </article>`;
@@ -960,7 +964,7 @@ function cardList(bk) {
     <div class="list-item">
       <i class="bx ${isPdf ? 'bxs-file-pdf' : 'bxs-file-archive'} list-icon ${bk.type}"></i>
       <a class="list-title" href="${escapeHtml(bk.view)}" target="_blank" rel="noopener">${escapeHtml(bk.title)}</a>
-      <span class="list-size">${escapeHtml(bk.size)}${bk.size ? ' MB' : ''}</span>
+      <span class="list-size">${escapeHtml(bk.size)}${bk.size ? ' Mb' : ''}</span>
       <a class="list-dl" href="${escapeHtml(bk.dl)}" download>
         <i class="bx bx-cloud-download"></i> Descargar
       </a>
